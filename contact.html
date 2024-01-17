@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+ .contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    color: white; /* If not already defined in style.css */
+    background: black; /* If not already defined in style.css */
+}
+
+/* Input and Textarea Styling */
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff; /* For visibility */
+    color: #000; /* Text color */
+}
+
+/* Textarea Specific Styling */
+.contact-form textarea {
+    height: 150px; /* Adjustable as needed */
+    resize: vertical;
+}
+
+/* Submit and Portfolio Buttons */
+.submit-button, .portfolio-button {
+    background-color: #00FF47;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+.submit-button:hover, .portfolio-button:hover {
+    background-color: #009933;
+}
+
+.profile-pic {
+    width: 150px; /* Adjust the size as needed */
+    height: 150px; /* Adjust the size as needed */
+    border-radius: 50%; /* Circular shape */
+    border: 3px solid #00FF47; /* Border color matching your site's theme */
+    display: block;
+    margin: 0 auto 20px; /* Center the image and add space below */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-container {
+        width: 90%;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    
+    <nav>
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="project.html">Project</a>
+            <a href="shop.html">Shop</a>
+        </div>
+    
+        <div class="nav-contact">
+            <button onclick="window.location.href='contact.html'">Contact</button>
+        </div>
+    </nav>
+
+    <div class="contact-container">
+        <img src="img/pf.png" alt="Profile Picture" class="profile-pic">
+        <form class="contact-form">
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+            <input type="email" id="email" name="email" placeholder="Your email" required>
+            <textarea id="message" name="message" placeholder="Your message" required></textarea>
+            <button type="submit" class="submit-button">Send Message</button>
+        </form>
+        <a href="https://kobevandyck.myportfolio.com/work" class="portfolio-button">View My Portfolio</a>
+    </div>
+    
+</body>
+</html>

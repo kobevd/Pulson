@@ -1,0 +1,234 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+    overflow-x: hidden;
+    position: relative;
+    font-family: monospace;
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px; /* Fixed padding */
+    background-color: #00FF47; /* Example Metaverse color */
+    color: black;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    margin: 0 20px; /* Fixed margin */
+    padding: 10px 0; /* Fixed padding */
+}
+
+.nav-links a:hover {
+    border-bottom: 2px solid black;
+}
+
+.nav-contact {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-contact button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px; /* Fixed padding */
+    cursor: pointer;
+    margin-right: 50px; /* Fixed margin */
+}
+
+.nav-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-logo img {
+    width: 100px; /* Fixed width */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .nav-links, .nav-contact {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links a {
+        margin: 5px 0; /* Adjusted margin for smaller screens */
+    }
+
+    .nav-contact button {
+        margin-right: 0; /* Adjust margin for smaller screens */
+    }
+
+    .nav-logo img {
+        width: 80px; /* Smaller logo on smaller screens */
+    }
+}
+
+
+
+        /* Header Styles */
+        .header-content {
+            position: relative;
+            text-align: center;
+        }
+
+        .header-img {
+            width: 100%;
+            height: auto;
+        }
+
+        .header-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+        }
+
+        .header-text h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        .explore-button {
+            background-color: #ff0055;
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            cursor: pointer;
+            font-size: 1em; /* Adjust font size */
+            margin-top: 20px;
+            transition: padding 0.3s ease, font-size 0.3s ease;
+        }
+
+        /* Responsive adjustments for header */
+        @media (max-width: 600px) {
+            .header-text h1 {
+                font-size: 1.5em; /* Smaller font size for header text */
+            }
+
+            .explore-button {
+                padding: 8px 15px; /* Smaller padding for the button */
+                font-size: 0.8em; /* Smaller font size for the button */
+            }
+        }
+
+.section-title {
+    padding: 20px;
+    margin-bottom: 20px; /* Space between title and cards */
+}
+
+.section-title h2 {
+    font-size: 2em; /* Size of the main title */
+    color: #00FF47; /* Color of the main title */
+    margin: 0; /* Remove default margin */
+}
+
+.subtitle {
+    font-size: 1.2em; /* Size of the subtitle */
+    color: #666666; /* Color of the subtitle */
+    margin-top: 10px; /* Space between title and subtitle */
+}
+
+
+
+.card-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 10% 0 10%;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 30%; /* Adjust based on your preference */
+    height: 50vh; /* Increased height */
+    background-size: cover; /* Image covers the entire card */
+    background-position: center;
+    margin: 10px;
+    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden; /* Ensures nothing goes outside the card boundaries */
+}
+
+.card-content {
+    position: absolute;
+    bottom: 0; /* Position text at the bottom of the card */
+    left: 0;
+    width: 100%; /* Full width of the card */
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: left;
+    color: white;
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+.card p {
+    margin-bottom: 0;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .card {
+        width: 100%;
+    }
+}
+
+.card:hover {
+    transform: scale(1.05); /* Slight increase in size on hover */
+}
+
+footer {
+
+    padding: 20px; /* Adjusted padding */
+    background-color: #191919; /* Example Metaverse color */
+    color: white;
+    border-radius: 0; /* Remove border-radius for full-width effect */
+}
+
+
+@media (max-width: 600px) {
+    nav, footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links, .nav-contact {
+        justify-content: center;
+    }
+
+    .gallery-container {
+        justify-content: center;
+    }
+
+    .nav-logo {
+        position: relative;
+        left: auto;
+        transform: none;
+    }
+}

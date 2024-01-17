@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Notes Rain</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: monospace;
+        }
+        #musicCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        #landing {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+        .explore-button {
+            padding: 10px 20px;
+            font-size: 20px;
+            color: white;
+            background-color: green;
+            border: none;
+            cursor: pointer;
+            z-index: 3;
+            cursor: pointer;
+            z-index: 2; /* Ensure the button is above the canvas */
+        }
+
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none; /* Allows click events to pass through to elements below */
+        }
+        #loadingScreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            display: none; /* Initially hidden */
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 2em;
+            z-index: 4; /* Above all other content */
+        }
+        @keyframes glitch {
+            /* Your glitch animation keyframes */
+        }
+        .glitch {
+            display: flex; /* Ensures the loading screen is visible when glitch is active */
+            animation: glitch 1s linear infinite;
+            color: #0F0;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="musicCanvas"></canvas>
+
+    <div id="landing">
+        <button class="explore-button" onclick="startLoading()">Explore</button>
+    </div>
+    <div id="loadingScreen" class="glitch">Loading...</div>
+    <script>
+        const canvas = document.getElementById('musicCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        const musicNotes = ['\u2669', '\u266A', '\u266B', '\u266C', '\u266D', '\u266E', '\u266F'];
+        const fontSize = 24;
+        const columns = canvas.width / fontSize;
+        const drops = Array.from({ length: columns }, () => 1);
+
+        function drawMusicNotes() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#0F0'; // Green text
+            ctx.font = fontSize + 'px serif';
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = musicNotes[Math.floor(Math.random() * musicNotes.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.95) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+
+            requestAnimationFrame(drawMusicNotes);
+        }
+
+        drawMusicNotes();
+
+
+        // JavaScript for the music notes rain effect
+        // ...
+
+        function startLoading() {
+            const loadingScreen = document.getElementById('loadingScreen');
+            loadingScreen.style.display = 'flex';
+
+            setTimeout(function() {
+                loadingScreen.classList.remove('glitch');
+                setTimeout(function() {
+                    window.location.href = 'home.html'; // Redirect to home page
+                }, 1000); 
+            }, 1000); 
+        }
+
+    </script>
+
+
+</body>
+
+</body>
+</html>

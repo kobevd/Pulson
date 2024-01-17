@@ -1,0 +1,139 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: black;
+    color: white;
+    font-family: monospace;
+    overflow: auto;
+}
+header {
+    text-align: center;
+    padding: 20px;
+}
+.product-container {
+    display: flex;
+    justify-content: space-around; /* Distribute space evenly */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    padding: 20px;
+    margin: 0 auto; /* Center the container */
+    max-width: 1200px; /* Maximum width of the container */
+}
+
+/* Individual Product */
+.product {
+    border: 1px solid white;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    flex-basis: 30%; /* Roughly one-third of the container */
+    box-sizing: border-box; /* Include padding and border in the element's width */
+}
+.product-title {
+    font-size: 30px;
+    margin-bottom: auto;
+    padding-bottom: 10%;
+}
+
+
+@media (max-width: 768px) {
+    .product-title {
+        font-size: 24px; /
+    }
+}
+.product:hover {
+    transform: translateY(-10px);
+}
+.product-description {
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align items */
+    padding: 0;
+    width: 80%; /* Adjust the width as needed */
+    margin: auto; /* Center the container */
+}
+
+.product-description li {
+    list-style: none; /* Remove default bullets */
+    padding: 10px 0; /* Increase padding */
+    position: relative;
+    text-align: left; /* Left align text */
+    width: 100%; /* Full width of the parent container */
+    display: flex; /* Use flexbox */
+    align-items: center; /* Vertically align icon with text */
+    justify-content: flex-start; /* Start content from the beginning */
+}
+
+.product-description li:before {
+    content: '⚫'; /* Unicode character for bullet point */
+    margin-right: 15px; /* Space between icon and text */
+    color: #00FF47; /* Green color matching the navbar */
+    font-size: 1em; /* Size of the icon */
+    min-width: 20px; /* Ensure consistent alignment */
+}
+
+.product-price {
+    margin-top: 10px;
+    font-weight: bold;
+    width: 100%; /* Full width */
+        text-align: center;
+}
+@media (max-width: 768px) {
+    .product {
+        flex-basis: 100%; /* Full width on smaller screens */
+    }
+}
+
+/* Styles for bullet points */
+.product-description ul {
+    text-align: left;
+    list-style: inside; /* Bullets inside the content box */
+}
+.buy-button {
+    display: block;
+    width: 100px;
+    padding: 10px;
+    margin: 20px auto;
+    background-color: green;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    width: 100px; /* Adjust as needed */
+    margin-top: 20px; /* Space above the button */
+}
+.product-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+#vstProducts {
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+.vst-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.vst-product {
+    background-color: #1a1a1a;
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.vst-product:hover {
+    transform: translateY(-10px);
+}
+.vst-image {
+    width: 100%;
+    height: auto;
+}
+.vst-title, .vst-price {
+    margin: 10px 0;
+}
+@media (max-width: 768px) {
+    .vst-grid {
+        grid-template-columns: 1fr;
+    }
+}

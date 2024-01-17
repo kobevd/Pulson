@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background: black;
+            color: white;
+            font-family: monospace;
+            overflow: auto;
+        }
+        p{
+            font-size: 1.2rem;
+        }
+        header, footer {
+            text-align: center;
+            padding: 20px;
+        }
+        .section {
+            padding: 40px;
+            margin: 20px 0;
+        }
+
+        .image-text-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px; /* White space between text and image */
+        }
+
+        .image-text-grid div:first-child {
+            padding-right: 20px; /* Additional space on the right side of the text */
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            .image-text-grid {
+                grid-template-columns: 1fr; /* Stack image and text on smaller screens */
+                gap: 10%;
+            }
+
+            .image-text-grid div:first-child {
+                padding-right: 0;
+            }
+
+            .image-grid {
+                grid-template-columns: 1fr 1fr; /* 2 columns for images on smaller screens */
+            }
+        }
+
+        .text-image-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two equal columns */
+            gap: 20px; /* Space between text and image */
+            align-items: center; /* Align items vertically */
+        }
+
+        .text-block {
+            font-size: larger;
+        }
+
+
+
+        .image-block img {
+            width: 100%;
+            height: auto;
+            display: block; /* Remove any default inline spacing */
+        }
+
+        @media (max-width: 768px) {
+            .text-image-container {
+                grid-template-columns: 1fr; /* Stack on smaller screens */
+            }
+        }
+                
+        /* background-color: #0F0; */
+        
+
+        .gallery-container {
+            padding-top: 5%;
+            padding-bottom: 5%;
+            position: relative;
+            width: 100%;
+            max-width: 1200px; /* Large size on wider screens */
+            margin: auto;
+            overflow: hidden; /* Ensures no overflow from images or buttons */
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        button.prev, button.next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #0F0;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 18px;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        button.prev:hover, button.next:hover {
+            opacity: 1;
+        }
+
+        button.prev { left: 10px; }
+        button.next { right: 10px; }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .gallery-container {
+                max-width: 100%; /* Full width on smaller screens */
+            }
+
+            button.prev, button.next {
+                padding: 5px 10px; /* Smaller padding for smaller screens */
+                font-size: 16px; /* Slightly smaller font size */
+            }
+        }
+
+        
+/* Add any additional media queries and styles as needed */
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="project.html">Project</a>
+            <a href="shop.html">Shop</a>
+        </div>
+    
+        <div class="nav-contact">
+            <button onclick="window.location.href='contact.html'">Contact</button>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Project Details</h1>
+    </header>
+
+    <div class="section">
+        <div class="text-image-container">
+            <div class="text-block">
+                <h2>Wat is PULSON?</h2>
+                <p>
+                    "PULSON" is een innovatieve herinterpretatie van de klassieke drum- en samplemachine, geïnspireerd door de AKAI MPC.
+                    De naam, een samenvoeging van 'Pulse' en het Latijnse 'SON' voor geluid, weerspiegelt zijn kern: het brengen van ritmische precisie en rijke geluiden voor zowel beginners als professionals.
+                    Het combineert geavanceerde sampling-mogelijkheden met gebruiksvriendelijke bedieningselementen, ideaal voor het verleggen van creatieve grenzen in muziekproductie.
+                </p>
+            </div>
+            <div class="image-block">
+                <img src="img/prodbysaino_a_3d_rendered_gradient_AKAI_MPC_LIVE_2_XXL_big_scre_4e3139d7-c67c-4728-9b77-1f873ce62f29.png" alt="Image Description">
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="text-image-container">
+
+            <div class="image-block">
+                <img src="img/Sketch_to_fetch.PNG" alt="Image Description">
+            </div>
+
+
+            <div class="text-block">
+                <h2>From Sketch to Fetch</h2>
+                <p>
+                    Het project ging na de ruwe schetsen de fase van verfijning in, een cruciaal stadium gekenmerkt door iteratief ontwerpen. 
+                    In deze fase evalueerde en verfijnde ik de ideeën die tijdens het schetsen waren ontstaan. Met behulp van gezamenlijke feedback slaagde ik erin deze concepten om te zetten in realiteit, volledig in lijn met de kernambities van "PULSON"
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div id="hiFiGallery" class="gallery-container">
+        <img src="img/Sampling screen.PNG" alt="High Fidelity Screenshot 1" class="gallery-image">
+        <img src="img/Drum screen.PNG" alt="High Fidelity Screenshot 2" class="gallery-image" style="display: none;">
+        <img src="img/Vst screen.PNG" alt="High Fidelity Screenshot 3" class="gallery-image" style="display: none;">
+        <img src="img/Structure screen.png" alt="High Fidelity Screenshot 4" class="gallery-image" style="display: none;">
+        <img src="img/Mastering screen.PNG" alt="High Fidelity Screenshot 5" class="gallery-image" style="display: none;">
+        <!-- Add more images as needed -->
+    
+        <button class="prev" onclick="changeSlide(-1)">❮ Prev</button>
+        <button class="next" onclick="changeSlide(1)">Next ❯</button>
+    </div>
+
+    <script>
+        var slideIndex = 0;
+        showSlides(slideIndex);
+    
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+    
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("gallery-image");
+            if (n >= slides.length) { slideIndex = 0 }
+            if (n < 0) { slideIndex = slides.length - 1 }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex].style.display = "block";
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2023 PULSON Music Inc.</p>
+    </footer>
+</body>
+</html>

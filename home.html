@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PULSON - Remake of AKAI MPC Live 2</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Include your preferred fonts from Google Fonts or similar -->
+    <style>
+   body, html {
+            margin: 0;
+            padding: 0;
+            font-family: monospace;
+        }   
+        header {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-content {
+    z-index: 1;
+}
+
+.parallax-section {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain; /* Changed from 'cover' to 'contain' */
+    height: 100vh; /* Reduced height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.section-content {
+    z-index: 1;
+    font-size: 2rem;
+    padding: 10%;
+    width: 20%; /* Adjust the width as necessary */
+}
+
+#scrollTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in the same place while scrolling */
+    bottom: 20px; /* Position from the bottom */
+    right: 30px; /* Position from the right */
+    z-index: 99; /* Sit on top of other elements */
+    border: none; /* No border */
+    outline: none; /* Remove outline */
+    background-color: #00FF47; /* Example: Matching your navbar color */
+    color: black; /* Text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    width: 40px; /* Equal width and height for a perfect cube */
+    height: 40px; /* Equal width and height for a perfect cube */
+    line-height: 40px; /* Center the arrow vertically */
+    text-align: center; /* Center the arrow horizontally */
+    border-radius: 0; /* Cube shape */
+    font-size: 18px; /* Arrow size */
+    font-family: monospace; /* Matching font */
+    transition: background-color 0.3s; /* Smooth background transition */
+}
+
+#scrollTopBtn:hover {
+    background-color: #009933; /* Darker shade on hover */
+}
+
+
+  
+    </style>
+</head>
+<body>
+
+
+    <nav>
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="project.html">Project</a>
+            <a href="shop.html">Shop</a>
+        </div>
+    
+        <div class="nav-contact">
+            <button onclick="window.location.href='contact.html'">Contact</button>
+        </div>
+    </nav>
+
+    <header id="home" style="background-image: url('img/prodbysaino_a_3d_rendered_gradient_AKAI_MPC_LIVE_2_XXL_big_scre_4e3139d7-c67c-4728-9b77-1f873ce62f29.png');">
+        <div class="header-content">
+            <h1>Discover the PULSON</h1>
+            <button class="explore-button">Explore</button>
+
+
+
+
+        </div>
+    </header>
+
+    <div class="parallax-section" style="background-image: url('img/image4.png');">
+        <div class="section-content">
+            <h3>NEW WORKFLOW</h3>
+        </div>
+    </div>
+    
+    <!-- Parallax Section - Your Music -->
+    <div class="parallax-section" style="background-image: url('img/image5.png');">
+        <div class="section-content">
+            <h3>BETTER SOUNDS</h3>
+        </div>
+    </div>
+    
+    <!-- Parallax Section - Your Way -->
+    <div class="parallax-section" style="background-image: url('img/image6.png');">
+        <div class="section-content">
+            <h3>CRAZY SH*T</h3>
+        </div>
+    </div>
+
+
+    <button id="scrollTopBtn" title="Go to top">↑</button>
+
+    <section class="card-section" id="gallery">
+
+        
+
+        <div class="card" id="card1" style="background-image: url('img/image1.png');">
+            <div class="card-content">
+                <h3>Your Idea</h3>
+                <p>Turn your musical idea's to life!</p>
+            </div>
+        </div>
+        <div class="card" id="card2" style="background-image: url('img/image2.png');">
+            <div class="card-content">
+                <h3>Yours Music</h3>
+                <p>Choose your own style and genre!.</p>
+            </div>
+        </div>
+        <div class="card" id="card3" style="background-image: url('img/image3.png');">
+            <div class="card-content">
+                <h3>Your Way</h3>
+                <p>Your PULSON, your workflow!</p>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <footer>
+        <p>&copy; 2023 PULSON Music Inc.</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('home');
+            let offset = window.pageYOffset;
+            header.style.backgroundPositionY = offset * 0.5 + 'px';
+        });
+
+
+        // Get the button
+        var scrollTopButton = document.getElementById("scrollTopBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollTopButton.style.display = "block";
+            } else {
+                scrollTopButton.style.display = "none";
+            }
+        };
+
+        // When the user clicks on the button, scroll to the top of the document smoothly
+        scrollTopButton.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    </script>
+    
+</body>
+</html>
